@@ -83,10 +83,62 @@
   </header>
 
   <main class="container">
+    <style>
+      .hero {
+        display: flex;
+        align-items: flex-start; /* Top alignment */
+        gap: 24px;               /* Space between avatar and content */
+      }
+      
+      .avatar {
+        flex-shrink: 0;          /* Keep avatar size fixed */
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .hero-content {
+        flex: 1;                 /* Allow content to expand */
+      }
+      
+      .pillbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      
+      .pill {
+        background-color: #eee;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.85rem;
+      }
+      
+      details[open] .contacts {
+        margin-top: 8px;
+      }
+      
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      
+      .card {
+        padding: 6px 10px;
+        background-color: #f7f7f7;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+      }
+    </style>
+    
     <!-- HERO -->
     <section class="hero" id="top">
       <img class="avatar" src="headshot.jpg" alt="Portrait of Irene Leal" />
-      <div>
+      <div class="hero-content">>
         <div class="kicker">E‑Learning • Digital Humanities</div>
         <h1>Irene Leal</h1>
         <p class="lead">I'm specialized in online learning experiences and platforms and passionate about conversation AI. My profile connects linguistics with technology.</p>
@@ -98,7 +150,7 @@
           <span class="pill" role="listitem">User Experience (UX) Design</span>
         </div>
         <details style="margin-top:12px">
-          <summary>Show Contacts</summary>
+          <summary>Show contact info</summary>
           <div class="contacts">
             <a class="card" href="mailto:irenelealdlc@gmail.com">irenelealdlc@gmail.com</a>
             <div class="card">Madrid, Spain</div>

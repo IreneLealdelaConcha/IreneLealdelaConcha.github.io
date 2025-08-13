@@ -14,4 +14,4 @@ I’m Irene Leal, a Digital Humanities & E-Learning professional. This site show
 
 - `index.html` — main website
 - `headshot.jpg` — profile photo
-- `resume.pdf` — CV
+- `IreneLeal_CV.pdf` — CV

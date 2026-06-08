@@ -1,415 +1,1155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Irene Leal — Portfolio</title>
-  <meta name="description" content="Portfolio of Irene Leal — E‑Learning Engineer & Digital Humanities." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕮</text></svg>">
-  <meta property="og:title" content="Irene Leal — Portfolio" />
-  <meta property="og:description" content="E‑Learning • Digital Humanities • Web." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://<your-username>.github.io/" />
-  <style>
-    :root{
-      --bg:#0b0d10; --surface:#111419; --muted:#9aa4b2; --text:#e9eef5; --brand:#6ee7b7; --accent:#60a5fa;
-      --card:#0f1318; --border:#1f2937; --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial; color:var(--text); background:radial-gradient(1200px 600px at 80% -10%,#1a2433,transparent), var(--bg)}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%; display:block}
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px); background:linear-gradient(180deg, rgba(11,13,16,.9), rgba(11,13,16,.5)); border-bottom:1px solid var(--border)}
-    nav{display:flex; gap:16px; align-items:center; height:64px}
-    nav .brand{font-weight:700; letter-spacing:0.3px}
-    nav ul{list-style:none; display:flex; gap:14px; margin:0 0 0 auto; padding:0}
-    nav ul a{padding:8px 10px; border-radius:10px}
-    nav ul a:hover{background:var(--surface)}
-    .hero{display:grid; grid-template-columns: 140px 1fr; gap:24px; padding:56px 0 24px; align-items:center}
-    .avatar{width:140px; height:140px; border-radius:24px; box-shadow:var(--shadow); border:1px solid var(--border); background:#0e1116; object-fit:cover}
-    .kicker{color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.12em; font-size:12px}
-    h1{margin:.2rem 0 .3rem; font-size:34px}
-    .lead{color:#cbd5e1}
-    .pillbar{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .pill{padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:#c4ceda}
-    .row{display:grid; grid-template-columns: 1fr 1fr; gap:24px}
-    section{padding:40px 0; border-top:1px solid var(--border)}
-    section h2{font-size:22px; margin:0 0 12px}
-    .contacts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:10px}
-    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow:var(--shadow)}
-    .edu-item,.exp-item{display:grid; grid-template-columns: 56px 1fr; gap:12px; align-items:flex-start}
-    .{width:56px; height:56px; border-radius:12px; background:#0f172a; display:grid; place-items:center; font-weight:700}
-    .when{color:var(--muted); font-size:13px}
-    .resume-btn{display:inline-block; margin-top:12px; background:var(--brand); color:#0b0d10; padding:10px 14px; border-radius:12px; font-weight:700}
-    .filters{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 16px}
-    .filters button{background:transparent; border:1px solid var(--border); color:#cbd5e1; padding:6px 10px; border-radius:999px; cursor:pointer}
-    .filters button.active, .filters button:hover{background:#0e1726}
-    .grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap:16px}
-    .proj{border:1px solid var(--border); border-radius:16px; overflow:hidden; background:linear-gradient(180deg,#0d1218,#0b0d10)}
-    .proj a{display:block}
-    .proj .body{padding:12px 14px}
-    .proj .tag{font-size:12px; color:var(--muted)}
-    .proj .title{margin:6px 0 0; font-weight:700}
-    .contact form{display:grid; gap:10px}
-    input, textarea{width:100%; background:#0f1318; border:1px solid var(--border); color:var(--text); padding:10px 12px; border-radius:12px}
-    .footer{padding:32px 0 64px; color:var(--muted); text-align:center}
-    .split{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
-    .sr-only{position:absolute; left:-10000px}
-    @media (max-width: 750px){
-      .hero{grid-template-columns: 1fr; text-align:center}
-      .row, .split{grid-template-columns:1fr}
-      nav ul{display:none}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Irene Leal — E-Learning Engineer & Conversational Designer. Bridging language, technology and learning experience.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕮</text></svg>">
+<title>Irene Leal · Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d10;
+  --surface: #14141a;
+  --surface2: #1c1c25;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8e8f0;
+  --muted: #7a7a92;
+  --accent: #7eb8f7;
+  --accent2: #b8a0f8;
+  --gold: #e8c87a;
+  --white: #ffffff;
+  --radius: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 20px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(13,13,16,0.95), transparent);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-cv {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 8px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.nav-cv:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(126,184,247,0.06) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 40% at 30% 80%, rgba(184,160,248,0.05) 0%, transparent 60%);
+}
+.hero-grid-lines {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 28px; height: 1px;
+  background: var(--accent);
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.hero-name em { font-style: italic; color: var(--accent); }
+.hero-title {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(232,232,240,0.75);
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+.hero-desc em { font-style: italic; color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 1.15em; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(126,184,247,0.25); }
+.btn-ghost {
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-visual {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center; align-items: center;
+}
+.hero-visual-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+.hero-img-wrap {
+  position: relative;
+  width: 200px; height: 245px;
+  flex-shrink: 0;
+}
+.hero-img-wrap::before {
+  content: '';
+  position: absolute; inset: -2px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 20px;
+  opacity: 0.45;
+}
+.hero-img-wrap img {
+  position: relative;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  filter: grayscale(20%) contrast(1.05);
+}
+.hero-tags {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  display: flex; flex-direction: column; gap: 10px;
+  width: 100%;
+}
+.hero-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+}
+.hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+/* SECTIONS */
+section {
+  padding: 100px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-header {
+  display: flex; align-items: baseline; gap: 20px;
+  margin-bottom: 64px;
+}
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  user-select: none;
+}
+.section-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(232,232,240,0.8);
+  margin-bottom: 18px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.about-text em { font-style: italic; color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 1.08em; }
+.about-text strong { color: var(--text); font-weight: 600; }
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.stat-box {
+  background: var(--surface);
+  padding: 24px;
+  text-align: center;
+  transition: background 0.2s;
+}
+.stat-box:hover { background: var(--surface2); }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.about-focus {
+  margin-top: 2px;
+  grid-column: 1 / -1;
+  background: var(--surface);
+  padding: 20px 24px;
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.focus-pill {
+  font-size: 0.74rem;
+  padding: 5px 13px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+.focus-blue { background: rgba(126,184,247,0.1); color: var(--accent); border: 1px solid rgba(126,184,247,0.2); }
+.focus-purple { background: rgba(184,160,248,0.1); color: var(--accent2); border: 1px solid rgba(184,160,248,0.2); }
+.focus-gold { background: rgba(232,200,122,0.1); color: var(--gold); border: 1px solid rgba(232,200,122,0.2); }
+
+/* EXPERIENCE */
+.exp-timeline { position: relative; }
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+  opacity: 0.3;
+}
+.exp-item {
+  padding: 0 0 52px 36px;
+  position: relative;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -4px; top: 8px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 12px rgba(126,184,247,0.4);
+}
+.exp-item:last-child { padding-bottom: 0; }
+.exp-date {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.exp-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+.exp-company {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.exp-logo {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  object-fit: contain;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 4px;
+  flex-shrink: 0;
+}
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.exp-bullets li {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(232,232,240,0.72);
+  padding-left: 16px;
+  position: relative;
+}
+.exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--muted); }
+.exp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.exp-chip {
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s;
+  text-decoration: none;
+  display: flex; flex-direction: column;
+}
+.project-card:hover { transform: translateY(-6px); border-color: rgba(126,184,247,0.3); }
+.project-thumb {
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.project-thumb-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-card:hover .project-thumb-img { transform: scale(1.04); }
+.project-thumb-bg { position: absolute; inset: 0; }
+.project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+.project-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.project-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.project-desc {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--muted);
+  flex: 1;
+}
+.project-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: gap 0.2s;
+}
+.project-card:hover .project-link { gap: 10px; }
+
+/* AWARDS */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.award-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.award-card:hover { border-color: rgba(232,200,122,0.3); transform: translateY(-3px); }
+.award-card.featured { border-color: rgba(232,200,122,0.25); background: linear-gradient(135deg, rgba(232,200,122,0.05), var(--surface)); }
+.award-card.featured::before {
+  content: '★';
+  position: absolute; top: 16px; right: 18px;
+  color: var(--gold); opacity: 0.4; font-size: 0.9rem;
+}
+.award-issuer {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.award-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.award-desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* SKILLS */
+.skills-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.skill-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+.skill-group:hover { border-color: rgba(126,184,247,0.25); }
+.skill-group-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.skill-group-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.skill-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-pill {
+  font-size: 0.78rem;
+  padding: 5px 13px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: rgba(232,232,240,0.8);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.skill-pill:hover { background: rgba(126,184,247,0.1); color: var(--accent); border-color: rgba(126,184,247,0.3); }
+
+/* EDUCATION */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.edu-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: border-color 0.2s;
+}
+.edu-card:hover { border-color: rgba(184,160,248,0.3); }
+.edu-period {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+.edu-degree {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.edu-school { font-size: 0.82rem; color: var(--muted); margin-bottom: 18px; }
+.edu-highlights { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.edu-highlights li {
+  font-size: 0.82rem;
+  color: rgba(232,232,240,0.65);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.55;
+}
+.edu-highlights li::before { content: '·'; position: absolute; left: 0; color: var(--accent2); }
+.edu-thesis {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: rgba(184,160,248,0.07);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--accent2);
+  line-height: 1.55;
+}
+.edu-thesis a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* CONTACT */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.contact-text em { font-style: italic; color: var(--accent); }
+.contact-sub { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
+.contact-links { display: flex; flex-direction: column; gap: 0; }
+.contact-link {
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: color 0.2s;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.contact-link:hover { color: var(--accent); }
+.contact-link-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  font-style: normal;
+}
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.form-input, .form-textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-textarea { height: 110px; }
+.form-submit {
+  padding: 13px 28px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 40px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(126,184,247,0.2); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 0.72rem; color: var(--muted); text-decoration: none;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
+
+/* REVEAL */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(126,184,247,0.3); border-radius: 4px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+  .hero-visual { display: none; }
+  section { padding: 64px 24px; }
+  .about-grid, .edu-grid, .contact-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .skills-layout, .awards-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .divider { margin: 0 24px; }
+  footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav aria-label="Primary">
-        <a href="#top" class="brand" style="color: white; text-decoration: none;">Irene Leal</a>
-        <ul>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Work Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Technical Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="IreneLeal_CV.pdf" target="_blank" rel="noopener">CV</a></li>
-        </ul>
-      </nav>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">Irene Leal</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://irenelealdelaconcha.github.io/IreneLeal_CV.pdf" class="nav-cv" target="_blank">Download CV</a>
+</nav>
+
+<!-- HERO -->
+<section id="top" style="max-width:100%;padding:0;">
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Madrid · Open to remote</div>
+    <h1 class="hero-name">Irene<br><em>Leal</em></h1>
+    <p class="hero-title">E-Learning Engineer &nbsp;·&nbsp; Conversational Designer</p>
+    <p class="hero-desc">
+      I started studying languages because I was fascinated by how they work from the inside.<br><br>
+      The thread has always been the same: <em>language as a design tool.</em>
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">See my work</a>
+      <a href="#contact" class="btn-ghost">Get in touch</a>
     </div>
-  </header>
-
-  <main class="container">
-    <style>
-      .hero {
-        display: flex;
-        align-items: flex-start; /* Top alignment */
-        gap: 24px;               /* Space between avatar and content */
-      }
-      
-      .avatar {
-        flex-shrink: 0;          /* Keep avatar size fixed */
-      }
-      
-      .hero-content {
-        flex: 1;                 /* Allow content to expand */
-      }
-    </style>
-    
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <img class="avatar" src="headshot.jpg" alt="Portrait of Irene Leal" />
-      <div class="hero-content">
-        <div class="kicker">E‑Learning • Digital Humanities</div>
-        <h1>Irene Leal</h1>
-        <p class="lead">I'm specialized in online learning experiences and platforms and passionate about conversational AI.</br>
-        My profile connects linguistics with technology.</p>
-        <div class="pillbar" role="list" aria-label="Skills">
-          <span class="pill" role="listitem">E-Learning Platforms · Instructional Design</span>
-          <span class="pill" role="listitem">Digital and Multimedia Interactive Content · Multilingual Digital Solutions</span>
-          <span class="pill" role="listitem">Conversational AI Development · Prompt Engineering</span>
-          <span class="pill" role="listitem">HTML/CSS · Python · Javascript</span>
-          <span class="pill" role="listitem">User Experience (UX) Design</span>
-        </div>
-        <details style="margin-top:12px">
-          <summary>Show contact info</summary>
-          <div class="contacts">
-            <a class="card" href="https://www.linkedin.com/in/irene-leal-de-la-concha-/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; white-space:nowrap;">
-              <img src="logoLinkedin.png" 
-                alt="LinkedIn " 
-                style="width:16px; height:16px; margin-right:8px;">
-                LinkedIn profile
-            </a>
-            <a class="card" href="mailto:irenelealdlc@gmail.com">📧 irenelealdlc@gmail.com</a>
-            <!-- <div class="card">Madrid, Spain</div> -->
-            <!-- <a class="card" href="https://github.com/IreneLealdelaConcha" target="_blank" rel="noopener">GitHub</a> -->
-          </div>
-        </details>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <div class="hero-img-wrap">
+        <img src="https://irenelealdelaconcha.github.io/headshot.jpg" alt="Irene Leal" onerror="this.style.display='none'">
       </div>
-    </section>
+      <div class="hero-tags">
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#7eb8f7;"></span><span style="color:var(--accent)">E-Learning & Instructional Design</span></div>
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#b8a0f8;"></span><span style="color:var(--accent2)">Conversational AI & NLP</span></div>
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#e8c87a;"></span><span style="color:var(--gold)">Digital Humanities</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About me</h2>
-      <div class="row">
-        <div class="card">
-          <p>Hi, I’m Irene — an e‑Learning Engineer with a Master’s in Digital Humanities. I work with accessible courses in e-Learning authoring tools and platforms, ensuring high quality and efficient functionality.</p>
-          <p>My skills include LMS configuration, image recreation using Adobe Photoshop, Illustrator, and InDesign, web development, and content modelling. I'm passionate about digital experiences, specially combining my e-Learning expertise with developing conversational assistants.</p>
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <div>
+      <div class="section-eyebrow">Who I am</div>
+      <h2 class="section-title">About me</h2>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I started studying languages because I was fascinated by how they work from the inside. I ended up designing courses for global audiences across multiple languages, and building chatbots that try to talk like people — including one about Dante Alighieri that became my Master's thesis in Digital Humanities at UCM.</p>
+      <p>The thread has always been the same: <em>language as a design tool.</em></p>
+      <p>Today I work as an <strong>E-Learning Engineer at TransPerfect</strong>, where I make sure training content works — technically and linguistically — in any language.</p>
+      <p>In parallel, I keep deepening my expertise in <strong>NLP, prompt engineering and conversational design</strong>.</p>
+      <p>I know why certain structures work better for comprehension, how to design a dialogue flow that doesn't frustrate the user, and how to adapt complex content so anyone can absorb it.</p>
+    </div>
+    <div class="reveal">
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Years in e-learning</div>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">Quick facts</h3>
-          <ul style="list-style:none; padding-left:0;"
-            <li style="margin-bottom:4px;">📍 Based in Madrid, Spain.</li>
-            <li style="margin-bottom:4px;">🖥️ 4+ years work experience in e‑Learning.</li>
-            <li style="margin-bottom:4px;">🎯 Focus: E-Learning & Instructional Design, Conversational AI & Linguistics, Multilingual Digital Solutions.</li>
-          </ul>
+        <div class="stat-box">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2°</div>
+          <div class="stat-label">Prize · Literary Bot</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Degrees · UCM</div>
+        </div>
+        <div class="about-focus">
+          <span class="focus-pill focus-blue">E-Learning & LXD</span>
+          <span class="focus-pill focus-blue">Instructional Design</span>
+          <span class="focus-pill focus-purple">Conversational AI</span>
+          <span class="focus-pill focus-purple">NLP & Prompt Engineering</span>
+          <span class="focus-pill focus-blue">Localisation</span>
+          <span class="focus-pill focus-gold">Digital Humanities</span>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="split">
-        <div class="edu-item card">
-          <div class="logo">
-            <img src="logoUCM.jpg" 
-              alt="Universidad Complutense de Madrid logo" 
-              style="width:80px; height:auto;">
-          </div>
-          <div>
-            <h3 style="margin:0">Master’s in Digital Humanities. <a href="https://www.ucm.es/estudios/master-letrasdigitales">Letras Digitales: Estudios Avanzados en Textualidades Electrónicas</a></h3>
-            <div class="when">2020 — 2022 · Universidad Complutense de Madrid</div>
-            <div><b>Highlights</b>: web technologies, artificial intelligence, e-Learning, digital collections, project management.</div>
-            <div><b>Master's Thesis</b>: <a href="#projects style="color:#336699; text-decoration:none;"><i>DantescoBot: a proposal for a literary conversational assistant specialized in Dante Alighieri and the Divine Comedy.</i></a></div>
-            <div><b>Average grade</b>: 7.88</div>
-          </div>
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <div>
+      <div class="section-eyebrow">Where I've worked</div>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+  </div>
+  <div class="exp-timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-date">Jun 2023 – Present · Madrid</div>
+      <div class="exp-role">E-Learning Engineer</div>
+      <div class="exp-company"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</div>
+      <ul class="exp-bullets">
+        <li>End-to-end implementation of localised e-learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
+        <li>Layout adjustment, audio synchronisation and image recreation after localisation, maintaining design intent across multiple language pairs.</li>
+        <li>Bug resolution during linguistic and functional QA phases in a high-volume, deadline-driven production environment.</li>
+        <li>Cross-office coordination with Project Managers and production teams across multiple time zones.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">Articulate Storyline</span><span class="exp-chip">Rise 360</span><span class="exp-chip">Adapt Learning</span><span class="exp-chip">SCORM</span><span class="exp-chip">Localisation</span><span class="exp-chip">QA</span><span class="exp-chip">Adobe CC</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">Dec 2021 – Jun 2023 · Madrid</div>
+      <div class="exp-role">Junior E-Learning Engineer</div>
+      <div class="exp-company"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</div>
+      <ul class="exp-bullets">
+        <li>Developed full-cycle production expertise across authoring tools and localisation workflows for international clients.</li>
+        <li>Built proficiency in SCORM packaging, LMS deployment and multimedia content adaptation.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">E-Learning Production</span><span class="exp-chip">Instructional Design</span><span class="exp-chip">Localisation</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">Feb – May 2021 · Remote · Internship</div>
+      <div class="exp-role">Digital Edition & Instructional Design</div>
+      <div class="exp-company"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial">Ideaspropias Editorial</div>
+      <ul class="exp-bullets">
+        <li>Instructional design and content assembly for official vocational certification e-learning courses.</li>
+        <li>Digital editing, PDF production and e-book layout and quality verification.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">Instructional Design</span><span class="exp-chip">Digital Editing</span><span class="exp-chip">ePub</span>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">Jan – Mar 2019 · Madrid · Internship</div>
+      <div class="exp-role">Multilingual Trade & Administrative Assistant</div>
+      <div class="exp-company"><img class="exp-logo" src="logoCAMERA.png" alt="Camera di Commercio">Camera di Commercio e Industria Italiana per la Spagna</div>
+      <ul class="exp-bullets">
+        <li>Client-facing support in Italian and English for business partners and institutional contacts of the Italian Embassy's trade office.</li>
+        <li>Market research, commercial event organisation and promotion of trade relations between Spain and Italy.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">Italian (C1)</span><span class="exp-chip">English (C2)</span><span class="exp-chip">Market Research</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <div>
+      <div class="section-eyebrow">What I've built</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+  </div>
+  <div class="projects-grid">
+
+    <a href="https://irenelealdelaconcha.github.io/DantescoBot/" target="_blank" class="project-card reveal">
+      <div class="project-thumb" style="overflow:hidden;">
+        <img class="project-thumb-img" src="/DantescoBot/Dante_retrato.png" alt="DantescoBot" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%, rgba(184,160,248,0.4), transparent 70%);font-size:3rem;">🤖</div>
+      </div>
+      <div class="project-body">
+        <div class="project-tag" style="color:var(--accent2)">Master's Thesis · Conversational AI · 2nd Prize</div>
+        <div class="project-title">DantescoBot</div>
+        <div class="project-desc">A literary conversational assistant specialised in Dante Alighieri and the Divine Comedy — awarded 2nd prize at UCM's Frankenbot literary bot competition. Built to demonstrate how dialogue architecture can make cultural heritage accessible and engaging.</div>
+        <div class="project-link">Explore project <span>→</span></div>
+      </div>
+    </a>
+
+    <a href="https://irenelealdelaconcha.github.io/ProjectEstimationAssistant/" target="_blank" class="project-card reveal">
+      <div class="project-thumb" style="overflow:hidden;">
+        <img class="project-thumb-img" src="ProjectEstimationAssistant/screenshot.png" alt="Project Estimation Assistant" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%, rgba(126,184,247,0.4), transparent 70%);font-size:3rem;">📊</div>
+      </div>
+      <div class="project-body">
+        <div class="project-tag" style="color:var(--accent)">Chatbot · Productivity Tool</div>
+        <div class="project-title">Project Estimation Assistant</div>
+        <div class="project-desc">A conversational assistant that guides users through project scoping and timeline estimation via natural dialogue. Designed to reduce friction in project planning workflows without requiring technical knowledge from the user.</div>
+        <div class="project-link">Explore project <span>→</span></div>
+      </div>
+    </a>
+
+    <a href="https://view.genially.com/69a1d002386475786b79efb5" target="_blank" class="project-card reveal">
+      <div class="project-thumb" style="overflow:hidden;">
+        <img class="project-thumb-img" src="genially-preview.png" alt="E-Learning Module" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%, rgba(232,200,122,0.35), transparent 70%);font-size:3rem;">🎓</div>
+      </div>
+      <div class="project-body">
+        <div class="project-tag" style="color:var(--gold)">E-Learning · Interactive Design</div>
+        <div class="project-title">Interactive E-Learning Module</div>
+        <div class="project-desc">An interactive learning experience built with Genially, demonstrating instructional design principles applied to multimedia-rich digital content — balancing engagement with effective knowledge transfer.</div>
+        <div class="project-link">Explore project <span>→</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <div>
+      <div class="section-eyebrow">Recognition</div>
+      <h2 class="section-title">Awards & Scholarships</h2>
+    </div>
+  </div>
+  <div class="awards-grid">
+
+    <div class="award-card featured reveal">
+      <div class="award-issuer">UCM · REC-LIT Project · Mar 2021</div>
+      <div class="award-title">2nd Prize — Literary Bot Competition (Frankenbot)</div>
+      <div class="award-desc">Second prize at UCM's literary bot creation contest, held as part of the REC-LIT research project on digital literature. Built a conversational bot that appropriated social media tools for literary production — the seed of my Master's thesis.</div>
+    </div>
+
+    <div class="award-card featured reveal">
+      <div class="award-issuer">Universidad Complutense de Madrid · 2019</div>
+      <div class="award-title">Academic Excellence Scholarship</div>
+      <div class="award-desc">Scholarship awarded to high-performing students to fund Master's studies at UCM, based on outstanding undergraduate academic record.</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-issuer">UCM Summer Courses · Jul 2024</div>
+      <div class="award-title">Scholarship — Advances in Language Technologies for 21st Century Society</div>
+      <div class="award-desc">Competitive scholarship to attend this course on AI and language technology, organised by the Digital Humanities and Spanish Language Technologies Cluster. Topics: generative AI, linguistic corpora in Spanish, emerging NLP markets.</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-issuer">UIMP · Jul 2023</div>
+      <div class="award-title">Scholarship — AI and Its Current Challenges</div>
+      <div class="award-desc">Competitive scholarship to attend this conference cycle on the current state of AI, covering ethical, political and legal implications. Held at the Palacio de la Magdalena, Santander.</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-issuer">UIMP · Aug 2025</div>
+      <div class="award-title">Scholarship — Design Workshop: 5 Keys to the Craft of Design</div>
+      <div class="award-desc">Competitive scholarship to attend this intensive workshop by renowned designer Manuel Estrada, covering visual thinking, typography, complexity in graphic communication and the intersection of human intelligence and digital tools.</div>
+    </div>
+
+    <div class="award-card reveal">
+      <div class="award-issuer">Becas Santander · Nov 2021</div>
+      <div class="award-title">Beca Santander Idiomas · Lingua Complutense</div>
+      <div class="award-desc">Language scholarship awarded for academic activities at the Centro Superior de Idiomas Modernos (UCM).</div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <div>
+      <div class="section-eyebrow">What I work with</div>
+      <h2 class="section-title">Technical Skills</h2>
+    </div>
+  </div>
+  <div class="skills-layout">
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">📚</div>
+      <div class="skill-group-title">E-Learning Authoring</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Articulate Storyline</span>
+        <span class="skill-pill">Rise 360</span>
+        <span class="skill-pill">Adapt Learning</span>
+        <span class="skill-pill">Learning360</span>
+        <span class="skill-pill">Teach on Mars</span>
+        <span class="skill-pill">Genially</span>
+        <span class="skill-pill">SCORM / xAPI</span>
+        <span class="skill-pill">LMS</span>
+        <span class="skill-pill">Instructional Design</span>
+        <span class="skill-pill">ADDIE</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">🤖</div>
+      <div class="skill-group-title">Conversational AI & NLP</div>
+      <div class="skill-pills">
+        <span class="skill-pill">IBM Watson Assistant</span>
+        <span class="skill-pill">Dialogflow</span>
+        <span class="skill-pill">Microsoft Copilot Studio</span>
+        <span class="skill-pill">Rasa</span>
+        <span class="skill-pill">Vertex AI</span>
+        <span class="skill-pill">Azure OpenAI</span>
+        <span class="skill-pill">Amazon Bedrock</span>
+        <span class="skill-pill">Prompt Engineering</span>
+        <span class="skill-pill">Dialogue Architecture</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">💻</div>
+      <div class="skill-group-title">Development & Languages</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">NLTK</span>
+        <span class="skill-pill">HTML5 / CSS</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Bootstrap</span>
+        <span class="skill-pill">Spanish (native)</span>
+        <span class="skill-pill">English (C2)</span>
+        <span class="skill-pill">Italian (C1)</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <div class="skill-group-icon">🎨</div>
+      <div class="skill-group-title">Digital Content & Humanities</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Adobe Photoshop</span>
+        <span class="skill-pill">Illustrator</span>
+        <span class="skill-pill">InDesign</span>
+        <span class="skill-pill">Acrobat</span>
+        <span class="skill-pill">XML · TEI · XPath</span>
+        <span class="skill-pill">Omeka · DSpace</span>
+        <span class="skill-pill">ePub (Sigil)</span>
+        <span class="skill-pill">UX Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <span class="section-num">06</span>
+    <div>
+      <div class="section-eyebrow">Academic background</div>
+      <h2 class="section-title">Education</h2>
+    </div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-period">2020 – 2022</div>
+      <div class="edu-degree">Master's in Digital Humanities<br><span style="font-style:italic;opacity:0.7">Letras Digitales</span></div>
+      <div class="edu-school"><img class="exp-logo" src="logoUCM.jpg" alt="UCM" style="margin-right:8px;vertical-align:middle;">Universidad Complutense de Madrid · Avg. grade: 7.88</div>
+      <ul class="edu-highlights">
+        <li>Web technologies, AI, e-learning & digital collections</li>
+        <li>Computational linguistics & language technologies</li>
+        <li>Project management & digital archiving</li>
+        <li>Metadata standards: XML, TEI, XPath, DTD</li>
+      </ul>
+      <div class="edu-thesis">
+        🎓 Thesis: <em><a href="https://irenelealdelaconcha.github.io/DantescoBot/" target="_blank">DantescoBot — a literary conversational assistant specialised in Dante Alighieri and the Divine Comedy</a></em> · 2nd Prize, Frankenbot Competition
+      </div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-period">2015 – 2019</div>
+      <div class="edu-degree">Degree in Modern Languages<br><span style="font-style:italic;opacity:0.7">English & Italian Literatures</span></div>
+      <div class="edu-school"><img class="exp-logo" src="logoUCM.jpg" alt="UCM" style="margin-right:8px;vertical-align:middle;">Universidad Complutense de Madrid · Avg. grade: 8.50</div>
+      <ul class="edu-highlights">
+        <li>Linguistics, semantics, pragmatics & discourse analysis</li>
+        <li>Textual criticism & cultural heritage</li>
+        <li>English (C2) · Italian (C1) · Spanish (native)</li>
+        <li>Academic Excellence Scholarship recipient</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-num">07</span>
+    <div>
+      <div class="section-eyebrow">Let's talk</div>
+      <h2 class="section-title">Get in touch</h2>
+    </div>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <p class="contact-text">Got a project, a role, or just want to <em>talk language & tech?</em></p>
+      <p class="contact-sub">Open to opportunities in e-learning engineering, instructional design, and conversational/NLP design — remote-friendly and internationally minded.</p>
+      <div class="contact-links">
+        <a href="mailto:irenelealdlc@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          irenelealdlc@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/irene-leal-de-la-concha-/" target="_blank" class="contact-link">
+          <span class="contact-link-icon" style="font-size:0.75rem;font-weight:700;">in</span>
+          linkedin.com/in/irene-leal-de-la-concha-
+        </a>
+        <a href="https://irenelealdelaconcha.github.io/IreneLeal_CV.pdf" target="_blank" class="contact-link">
+          <span class="contact-link-icon">📄</span>
+          Download CV (PDF)
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-form">
+        <div class="form-field">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-input" placeholder="Your name">
         </div>
-        <div class="edu-item card">
-          <div class="logo">
-            <img src="logoUCM.jpg" 
-              alt="Universidad Complutense de Madrid logo" 
-              style="width:80px; height:auto;">
-          </div>
-          <div>
-            <h3 style="margin:0">Degree in <a href="https://www.ucm.es/estudios/grado-lenguasmodernasysusliteraturas">Modern Languages and their Literatures (English and Italian)</a></h3>
-            <div class="when">2015 — 2019 · Universidad Complutense de Madrid</div>
-            <div><b>Highlights</b>: linguistics, textual criticism, cultural heritage.</div>
-            <div><b>Average grade</b>: 8.50</div>
-          </div>
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
         </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Work Experience</h2>
-      <div class="split">
-        <article class="exp-item card">
-          <div class="logo">
-            <img src="logoTRANSPERFECT.jpeg" 
-              alt="TransPerfect icon" 
-              style="width:80px; height:auto;">
-          </div>
-          <div>
-            <h3 style="margin:0">E‑Learning Engineer · TransPerfect</h3>
-            <div class="when">2021 — Present · Madrid</div>
-            <ul>
-              <li>Analyze and extract translatable content from e-Learning courses.</li>
-              <li>Implementation of localized content into original builds, adjusting layout and synchronizing audio and animations. Recreation of images.</li>
-              <li>Implementation of bug fixes reported during the linguistic and functional QA using Articulate Rise, Storyline, Learning360, Teach on Mars, Adapt and other e-Learning apps.</li>
-              <li>Coordinate and communicate with other e-Learning specialists in different offices, Project Managers, and other production team members, in various locations and time zones.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="exp-item card">
-          <div class="logo">
-            <img src="logoIPE.jpeg" 
-              alt="Ideaspropias icon" 
-              style="width:80px; height:auto;">
-          </div>
-          <div>
-            <h3 style="margin:0">Digital Edition of Training Content · Ideaspropias Editorial</h3>
-            <div class="when">Feb 2021 — May 2021 · Remote</div>
-            <ul>
-              <li>Review, correction and update of original content for publication in book format (paper and digital).</li>
-              <li>Edition of digital content in PDF format and check of eBooks layout.</li>
-              <li>Quality assurance and control of the eBooks.</li>
-              <li>Instructional design tasks and assembling content in e-Learning tools.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="exp-item card">
-          <div class="logo">
-            <img src="logoCAMERA.png" 
-              alt="Camera di Commercio Italiana per la Spagna icon" 
-              style="width:80px; height:auto;">
-          </div>
-          <div>
-            <h3 style="margin:0">Multilingual Trade	&	Administrative Assistant · Camera di Commercio Italiana per la Spagna</h3>
-            <div class="when">Jan 2019 — Mar 2019 · Madrid</div>
-            <ul>
-              <li>Assistance to companies, individuals and partners in Italian and English.</li>
-              <li>Translations, research, and marketing analysis.</li>
-              <li>Organization of events, trips, and promotion of events.</li>
-              <li>Management of job offers and administrative tasks.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="filters" role="tablist" aria-label="Project filters">
-        <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button data-filter="master" role="tab">Master's Thesis</button>
-        <button data-filter="chatbot" role="tab">Project Time Estimation chatbot</button>
-        <button data-filter="elearning" role="tab">e-Learning module</button>
-      </div>
-      
-      <div class="grid" id="projectGrid">
-        <!-- DantescoBot Project -->
-        <article class="proj" data-tags="master">
-          <a href="https://irenelealdelaconcha.github.io/DantescoBot/" target="_blank" rel="noopener" aria-label="Open DantescoBot project">
-            <img src="/DantescoBot/Dante_retrato.png" 
-                 alt="Screenshot or visual representation of DantescoBot project" loading="lazy" />
-            <div class="body">
-                <div class="tag">Master's Thesis</div>
-                <div class="title">DantescoBot: Conversational Literary Assistant (in Spanish)</div>
-            </div>
-          </a>
-        </article>
-      
-        <!-- Project Estimation Assistant -->
-        <article class="proj" data-tags="chatbot">
-          <a href="https://irenelealdelaconcha.github.io/ProjectEstimationAssistant/" target="_blank" rel="noopener" aria-label="Open Project Estimation Assistant in new tab">
-            <img src="ProjectEstimationAssistant/screenshot.png" alt="Screenshot of Project Estimation Assistant" loading="lazy" />
-            <div class="body">
-              <div class="tag">Chatbot</div>
-              <div class="title">Project Estimation Assistant</div>
-            </div>
-          </a>
-        </article>
-
-        <!-- Genially eLearning Portfolio -->
-        <article class="proj" data-tags="elearning">
-          <a href="https://view.genially.com/69a1d002386475786b79efb5" target="_blank" rel="noopener" aria-label="Open Interactive eLearning Portfolio in new tab">
-            <img src="/genially-preview.png" alt="Screenshot of interactive eLearning portfolio created with Genially" loading="lazy" />
-            <div class="body">
-              <div class="tag">eLearning</div>
-              <div class="title">Interactive eLearning module</div>
-            </div>
-          </a>
-      </article>
-      </div>
-    </section>
-      
-        <!-- unknown 
-        <article class="proj" data-tags="web">
-          <a href="https://github.com/yourusername/project-3" target="_blank" rel="noopener">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Website screenshot placeholder" loading="lazy" />
-            <div class="body">
-              <div class="tag">Web</div>
-              <div class="title">Minimal portfolio theme</div>
-            </div>
-          </a>
-        </article> -->
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      
-      <!-- e-Learning -->
-      <h3>📚 e-Learning tools</h3>
-      <div class="pillbar" role="list" aria-label="e-Learning Skills">
-        <span class="pill" role="listitem">Rise 360</span>
-        <span class="pill" role="listitem">Articulate Storyline</span>
-        <span class="pill" role="listitem">Learning360</span>
-        <span class="pill" role="listitem">Teach On Mars</span>
-        <span class="pill" role="listitem">Adapt</span>
-        <span class="pill" role="listitem">Genially</span>
-      </div>
-      
-      <!-- Technologies -->
-      <h3>💻 Technologies</h3>
-      <div class="pillbar" role="list" aria-label="Technology Skills">
-        <span class="pill" role="listitem">HTML/CSS</span>
-        <span class="pill" role="listitem">Python</span>
-        <span class="pill" role="listitem">JavaScript</span>
-      </div>
-      
-      <!-- Chatbots -->
-      <h3>🤖 Chatbots</h3>
-      <div class="pillbar" role="list" aria-label="Chatbot Skills">
-        <span class="pill" role="listitem">IBM Watson Assistant</span>
-        <span class="pill" role="listitem">Dialogflow</span>
-        <span class="pill" role="listitem">Microsoft Copilot</span>
-        <span class="pill" role="listitem">Prompt Engineering</span>
-        <span class="pill" role="listitem">Vertex AI</span>
-      </div>
-
-      <!-- Adobe Tools -->
-      <h3>🎨 Adobe Tools</h3>
-      <div class="pillbar" role="list" aria-label="Adobe Skills">
-        <span class="pill" role="listitem">Photoshop</span>
-        <span class="pill" role="listitem">Illustrator</span>
-        <span class="pill" role="listitem">InDesign</span>
-        <span class="pill" role="listitem">Acrobat</span>
-      </div>
-      
-      <!-- Digital Libraries -->
-      <h3>📚 Digital Libraries</h3>
-      <div class="pillbar" role="list" aria-label="Digital Library Skills">
-        <span class="pill" role="listitem">Omeka</span>
-        <span class="pill" role="listitem">DSpace</span>
-        <span class="pill" role="listitem">Metadata Standards (XML, TEI, XPath, DTD)</span>
-        <span class="pill" role="listitem">Digital Archiving</span>
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <div class="row">
-        <div class="card">
-          <form action="https://formspree.io/f/xjkolder" method="POST">
-            <label>
-              <span class="sr-only">Your name</span>
-              <input name="name" placeholder="Your name" required />
-            </label>
-            <label>
-              <span class="sr-only">Your email</span>
-              <input type="email" name="email" placeholder="Your email" required />
-            </label>
-            <label>
-              <span class="sr-only">Your message</span>
-              <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
-            </label>
-            <button class="resume-btn" type="submit">Send Message</button>
-          </form>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project or opportunity…"></textarea>
         </div>
-        <div class="card">
-          <h3 style="margin-top:0">CV</h3>
-          <p>Prefer a PDF? Grab my latest CV</p>
-          <a class="resume-btn" href="IreneLeal_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-          <p style="margin-top:8px">Or email me: <a href="mailto:irenelealdlc@gmail.com">irenelealdlc@gmail.com</a></p>
-        </div>
+        <button class="form-submit">Send message →</button>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="container">© <span id="year"></span> Irene Leal · Built with HTML/CSS/JS ·</div>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <span class="footer-copy">© 2025 Irene Leal · irenelealdelaconcha.github.io</span>
+  <div class="footer-links">
+    <a href="#top">Back to top ↑</a>
+    <a href="https://www.linkedin.com/in/irene-leal-de-la-concha-/" target="_blank">LinkedIn</a>
+    <a href="https://irenelealdelaconcha.github.io/IreneLeal_CV.pdf" target="_blank">CV</a>
+  </div>
+</footer>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Project filters
-    const grid = document.getElementById('projectGrid');
-    const buttons = document.querySelectorAll('.filters button');
-    buttons.forEach(btn => btn.addEventListener('click', e => {
-      const tag = e.currentTarget.dataset.filter;
-      buttons.forEach(b => b.classList.remove('active'));
-      e.currentTarget.classList.add('active');
-      [...grid.children].forEach(card => {
-        const has = card.dataset.tags.includes(tag);
-        card.style.display = (tag==='all' || has) ? '' : 'none';
-      });
-    }));
-
-    // Respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      document.documentElement.style.scrollBehavior = 'auto';
-    }
-  </script>
+// Nav active link
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+  });
+});
+</script>
 </body>
 </html>

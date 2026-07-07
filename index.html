@@ -1116,22 +1116,57 @@ footer {
       </div>
     </div>
     <div class="reveal">
-      <div class="contact-form">
-        <div class="form-field">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-input" placeholder="Your name">
-        </div>
-        <div class="form-field">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="your@email.com">
-        </div>
-        <div class="form-field">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project or opportunity…"></textarea>
-        </div>
-        <button class="form-submit">Send message →</button>
-      </div>
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/xjkolder"
+    method="POST"
+  >
+    <div class="form-field">
+      <label class="form-label" for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+        class="form-input"
+        placeholder="Your name"
+        required
+      >
     </div>
+
+    <div class="form-field">
+      <label class="form-label" for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        class="form-input"
+        placeholder="your@email.com"
+        required
+      >
+    </div>
+
+    <div class="form-field">
+      <label class="form-label" for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        class="form-textarea"
+        placeholder="Tell me about your project or opportunity…"
+        required
+      ></textarea>
+    </div>
+
+    <input
+      type="hidden"
+      name="_next"
+      value="https://irenelealdelaconcha.github.io/"
+    >
+
+    <button type="submit" class="form-submit">
+      Send message →
+    </button>
+  </form>
+</div>
   </div>
 </section>
 

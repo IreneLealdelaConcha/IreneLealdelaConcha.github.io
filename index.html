@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio of Irene Leal — E-Learning Engineer. Bridging language, technology and learning experience.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕮</text></svg>">
+<meta name="description" content="Portfolio of Irene Leal — E-Learning Engineer & Conversational Designer. Bridging language, technology and learning experience.">
 <title>Irene Leal · Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -21,17 +20,17 @@
   --white: #ffffff;
   --radius: 12px;
 }
-
+ 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
+ 
 body {
   font-family: 'Syne', sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
 }
-
+ 
 /* Grain overlay */
 body::before {
   content: '';
@@ -41,7 +40,7 @@ body::before {
   z-index: 1000;
   opacity: 0.4;
 }
-
+ 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0;
@@ -83,7 +82,7 @@ nav {
   transition: opacity 0.2s, transform 0.2s;
 }
 .nav-cv:hover { opacity: 0.85; transform: translateY(-1px); }
-
+ 
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -169,18 +168,17 @@ nav {
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
+ 
 .hero-visual {
   position: relative; z-index: 2;
   display: flex; justify-content: center; align-items: center;
 }
 .hero-visual-inner {
   display: flex; flex-direction: column; align-items: center; gap: 24px;
-  transform: translateY(-60px);
 }
 .hero-img-wrap {
   position: relative;
-  width: 150px; height: 185px;
+  width: 200px; height: 245px;
   flex-shrink: 0;
 }
 .hero-img-wrap::before {
@@ -212,10 +210,10 @@ nav {
   display: flex; align-items: center; gap: 8px;
 }
 .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-
+ 
 /* SECTIONS */
 section {
-  padding: 70px 48px;
+  padding: 100px 48px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -227,7 +225,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: 4rem;
   font-weight: 300;
-  color: rgba(255, 255, 255);
+  color: rgba(255,255,255,0.04);
   line-height: 1;
   user-select: none;
 }
@@ -245,7 +243,7 @@ section {
   color: var(--white);
   line-height: 1.1;
 }
-
+ 
 /* ABOUT */
 .about-grid {
   display: grid;
@@ -307,7 +305,7 @@ section {
 .focus-blue { background: rgba(126,184,247,0.1); color: var(--accent); border: 1px solid rgba(126,184,247,0.2); }
 .focus-purple { background: rgba(184,160,248,0.1); color: var(--accent2); border: 1px solid rgba(184,160,248,0.2); }
 .focus-gold { background: rgba(232,200,122,0.1); color: var(--gold); border: 1px solid rgba(232,200,122,0.2); }
-
+ 
 /* EXPERIENCE */
 .exp-timeline { position: relative; }
 .exp-timeline::before {
@@ -351,15 +349,15 @@ section {
   font-size: 0.85rem;
   color: var(--muted);
   margin-bottom: 16px;
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 10px;
 }
 .exp-logo {
-  width: 50px; height: 50px;
-  border-radius: 8px;
+  width: 32px; height: 32px;
+  border-radius: 6px;
   object-fit: contain;
   background: var(--surface2);
   border: 1px solid var(--border);
-  padding: 2px;
+  padding: 4px;
   flex-shrink: 0;
 }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -380,7 +378,7 @@ section {
   border: 1px solid var(--border);
   color: var(--muted);
 }
-
+ 
 /* PROJECTS */
 .projects-grid {
   display: grid;
@@ -439,7 +437,7 @@ section {
   transition: gap 0.2s;
 }
 .project-card:hover .project-link { gap: 10px; }
-
+ 
 /* AWARDS */
 .awards-grid {
   display: grid;
@@ -481,7 +479,7 @@ section {
   line-height: 1.65;
   color: var(--muted);
 }
-
+ 
 /* SKILLS */
 .skills-layout {
   display: grid;
@@ -515,7 +513,7 @@ section {
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .skill-pill:hover { background: rgba(126,184,247,0.1); color: var(--accent); border-color: rgba(126,184,247,0.3); }
-
+ 
 /* EDUCATION */
 .edu-grid {
   display: grid;
@@ -564,7 +562,7 @@ section {
   line-height: 1.55;
 }
 .edu-thesis a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
-
+ 
 /* CONTACT */
 .contact-wrap {
   display: grid;
@@ -640,7 +638,7 @@ section {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(126,184,247,0.2); }
-
+ 
 /* FOOTER */
 footer {
   border-top: 1px solid var(--border);
@@ -654,22 +652,22 @@ footer {
   letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--accent); }
-
+ 
 /* DIVIDER */
 .divider { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
-
+ 
 /* REVEAL */
 .reveal {
   opacity: 0; transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
+ 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(126,184,247,0.3); border-radius: 4px; }
-
+ 
 /* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding: 16px 24px; }
@@ -686,7 +684,7 @@ footer {
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <a href="#top" class="nav-logo">Irene Leal</a>
@@ -699,16 +697,16 @@ footer {
   </ul>
   <a href="https://irenelealdelaconcha.github.io/IreneLeal_CV.pdf" class="nav-cv" target="_blank">Download CV</a>
 </nav>
-
+ 
 <!-- HERO -->
 <section id="top" style="max-width:100%;padding:0;">
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Madrid</div>
+    <div class="hero-eyebrow">Madrid · Open to remote</div>
     <h1 class="hero-name">Irene<br><em>Leal</em></h1>
-    <p class="hero-title">E-Learning Engineer</p>
+    <p class="hero-title">Computational Linguist &nbsp;·&nbsp; E-Learning Engineer &nbsp;·&nbsp; Conversational Designer</p>
     <p class="hero-desc">
       I started studying languages because I was fascinated by how they work from the inside.<br><br>
       The thread has always been the same: <em>language as a design tool.</em>
@@ -732,9 +730,9 @@ footer {
   </div>
 </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
 <!-- ABOUT -->
 <section id="about">
   <div class="section-header reveal">
@@ -746,32 +744,32 @@ footer {
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I started studying languages because I was fascinated by how they work from the inside. I ended up designing courses for global audiences across multiple languages, and building chatbots that try to talk like people, including one about Dante Alighieri that became my Master's thesis in Digital Humanities at UCM.</p>
+      <p>I started studying languages because I was fascinated by how they work from the inside. I ended up designing courses for global audiences across multiple languages, and building chatbots that try to talk like people — including one about Dante Alighieri that became my Master's thesis in Digital Humanities at UCM.</p>
       <p>The thread has always been the same: <em>language as a design tool.</em></p>
-      <p>Today I work as an <strong>E-Learning Engineer</strong>, where I make sure training content works, technically and linguistically, in any language.</p>
-      <p>In parallel, I keep deepening my expertise in <strong>NLP, prompt engineering and conversational design</strong>.</p>
+      <p>Today that thread leads me to <strong>DeudaFix</strong>, where I work as a <strong>Computational Linguist</strong> — designing NLP solutions for legal documentation, adapting LLMs for specialized legal terminology, and building conversational systems that make complex processes more accessible.</p>
+      <p>Before this, I spent 4+ years at TransPerfect as an E-Learning Engineer, making sure training content worked — technically and linguistically — in any language. That experience gave me something most NLP profiles don't have: a deep understanding of how people learn, how dialogue flows, and why certain language structures work better than others.</p>
       <p>I know why certain structures work better for comprehension, how to design a dialogue flow that doesn't frustrate the user, and how to adapt complex content so anyone can absorb it.</p>
     </div>
     <div class="reveal">
       <div class="about-stats">
         <div class="stat-box">
           <div class="stat-num">4+</div>
-          <div class="stat-label">Years in e-Learning</div>
+          <div class="stat-label">Years in e-learning</div>
         </div>
         <div class="stat-box">
           <div class="stat-num">3</div>
           <div class="stat-label">Languages</div>
         </div>
         <div class="stat-box">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Degrees · UCM</div>
-        </div>        
-        <div class="stat-box">
           <div class="stat-num">2°</div>
           <div class="stat-label">Prize · Literary Bot</div>
         </div>
+        <div class="stat-box">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Degrees · UCM</div>
+        </div>
         <div class="about-focus">
-          <span class="focus-pill focus-blue">E-Learning & Learning Experience Design</span>
+          <span class="focus-pill focus-blue">E-Learning & LXD</span>
           <span class="focus-pill focus-blue">Instructional Design</span>
           <span class="focus-pill focus-purple">Conversational AI</span>
           <span class="focus-pill focus-purple">NLP & Prompt Engineering</span>
@@ -782,9 +780,9 @@ footer {
     </div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="section-header reveal">
@@ -795,22 +793,31 @@ footer {
     </div>
   </div>
   <div class="exp-timeline">
-
+ 
     <div class="exp-item reveal">
-      <div class="exp-date">Jun 2023 – Present · Madrid</div>
+      <div class="exp-date">Jun 2025 – Present · Madrid</div>
+      <div class="exp-role">Computational Linguist</div>
+      <div class="exp-company"><img class="exp-logo" src="logoDeudaFix.png" alt="DeudaFix" onerror="this.style.background='var(--surface2)';this.style.opacity='0.4';">DeudaFix</div>
+      <div class="exp-chips">
+        <span class="exp-chip">NLP</span><span class="exp-chip">LLMs</span><span class="exp-chip">Vertex AI</span><span class="exp-chip">Amazon Bedrock</span><span class="exp-chip">Legal Tech</span><span class="exp-chip">Prompt Engineering</span><span class="exp-chip">Conversational AI</span>
+      </div>
+    </div>
+ 
+    <div class="exp-item reveal">
+      <div class="exp-date">Jun 2023 – Jun 2025 · Madrid</div>
       <div class="exp-role">E-Learning Engineer</div>
       <div class="exp-company"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</div>
       <ul class="exp-bullets">
-        <li>End-to-end implementation of localised e-Learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
+        <li>End-to-end implementation of localised e-learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
         <li>Layout adjustment, audio synchronisation and image recreation after localisation, maintaining design intent across multiple language pairs.</li>
         <li>Bug resolution during linguistic and functional QA phases in a high-volume, deadline-driven production environment.</li>
         <li>Cross-office coordination with Project Managers and production teams across multiple time zones.</li>
       </ul>
       <div class="exp-chips">
-        <span class="exp-chip">Articulate Storyline</span><span class="exp-chip">Rise 360</span><span class="exp-chip">Adapt Learning</span><span class="exp-chip">SCORM</span><span class="exp-chip">Localization</span><span class="exp-chip">QA</span><span class="exp-chip">Adobe Creative Cloud</span>
+        <span class="exp-chip">Articulate Storyline</span><span class="exp-chip">Rise 360</span><span class="exp-chip">Adapt Learning</span><span class="exp-chip">SCORM</span><span class="exp-chip">Localisation</span><span class="exp-chip">QA</span><span class="exp-chip">Adobe CC</span>
       </div>
     </div>
-
+ 
     <div class="exp-item reveal">
       <div class="exp-date">Dec 2021 – Jun 2023 · Madrid</div>
       <div class="exp-role">Junior E-Learning Engineer</div>
@@ -823,20 +830,20 @@ footer {
         <span class="exp-chip">E-Learning Production</span><span class="exp-chip">Instructional Design</span><span class="exp-chip">Localisation</span>
       </div>
     </div>
-
+ 
     <div class="exp-item reveal">
       <div class="exp-date">Feb – May 2021 · Remote · Internship</div>
       <div class="exp-role">Digital Edition & Instructional Design</div>
       <div class="exp-company"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial">Ideaspropias Editorial</div>
       <ul class="exp-bullets">
-        <li>Instructional design and content assembly for official certification of e-Learning courses.</li>
+        <li>Instructional design and content assembly for official vocational certification e-learning courses.</li>
         <li>Digital editing, PDF production and e-book layout and quality verification.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">Instructional Design</span><span class="exp-chip">Digital Editing</span><span class="exp-chip">ePub</span>
       </div>
     </div>
-
+ 
     <div class="exp-item reveal">
       <div class="exp-date">Jan – Mar 2019 · Madrid · Internship</div>
       <div class="exp-role">Multilingual Trade & Administrative Assistant</div>
@@ -849,12 +856,13 @@ footer {
         <span class="exp-chip">Italian (C1)</span><span class="exp-chip">English (C2)</span><span class="exp-chip">Market Research</span>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <hr class="divider">
 
+  
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header reveal">

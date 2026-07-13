@@ -177,6 +177,27 @@ nav {
 .hero-visual-inner {
   display: flex; flex-direction: column; align-items: center; gap: 24px;
 }
+  .scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  z-index: 2;
+}
+.scroll-arrow { font-size: 0.95rem; animation: bounce 1.6s infinite; }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+@media (max-width: 900px) { .scroll-hint { display: none; } }
 .hero-img-wrap {
   position: relative;
   width: 200px; height: 245px;
@@ -211,7 +232,18 @@ nav {
   display: flex; align-items: center; gap: 8px;
 }
 .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
- 
+.hero-tags-rotate { position: relative; height: 34px; overflow: hidden; padding: 0; }
+.hero-tags-rotate .hero-tag {
+  position: absolute; left: 20px; right: 20px; top: 50%;
+  transform: translateY(calc(-50% + 10px));
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.hero-tags-rotate .hero-tag.hero-tag-active {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+  
 /* SECTIONS */
 section {
   padding: 100px 48px;
@@ -720,15 +752,20 @@ footer {
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary">See my work</a>
       <a href="#contact" class="btn-ghost">Get in touch</a>
+      <a href="https://irenelealdelaconcha.github.io/DantescoBot/" class="btn-ghost" target="_blank">🤖 Talk to DantescoBot</a>
     </div>
   </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll to explore">
+    <span>Scroll to explore</span>
+    <span class="scroll-arrow">↓</span>
+  </a>
   <div class="hero-visual">
     <div class="hero-visual-inner">
       <div class="hero-img-wrap">
         <img src="https://irenelealdelaconcha.github.io/headshot.jpg" alt="Irene Leal" onerror="this.style.display='none'">
       </div>
-      <div class="hero-tags">
-        <div class="hero-tag"><span class="hero-tag-dot" style="background:#b8a0f8;"></span><span style="color:var(--accent2)">Conversational AI & NLP</span></div>
+      <div class="hero-tags hero-tags-rotate">
+        <div class="hero-tag hero-tag-active"><span class="hero-tag-dot" style="background:#b8a0f8;"></span><span style="color:var(--accent2)">Conversational AI & NLP</span></div>
         <div class="hero-tag"><span class="hero-tag-dot" style="background:#7eb8f7;"></span><span style="color:var(--accent)">e-Learning & Instructional Design</span></div>
         <div class="hero-tag"><span class="hero-tag-dot" style="background:#e8c87a;"></span><span style="color:var(--gold)">Digital Humanities</span></div>
       </div>
@@ -1220,6 +1257,18 @@ window.addEventListener('scroll', () => {
     a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
   });
 });
+
+  // Hero tag rotator
+const heroTags = document.querySelectorAll('.hero-tags-rotate .hero-tag');
+if (heroTags.length) {
+  let tagIndex = 0;
+  setInterval(() => {
+    heroTags[tagIndex].classList.remove('hero-tag-active');
+    tagIndex = (tagIndex + 1) % heroTags.length;
+    heroTags[tagIndex].classList.add('hero-tag-active');
+  }, 2800);
+}
+  
 </script>
 </body>
 </html>

@@ -232,17 +232,17 @@ nav {
   display: flex; align-items: center; gap: 8px;
 }
 .hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-.hero-tags-rotate { position: relative; height: 34px; overflow: hidden; padding: 0; }
-.hero-tags-rotate .hero-tag {
-  position: absolute; left: 20px; right: 20px; top: 50%;
-  transform: translateY(calc(-50% + 10px));
-  opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.type-target::after {
+  content: '';
+  display: inline-block;
+  width: 1px; height: 0.9em;
+  background: currentColor;
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: caret-blink 0.8s step-end infinite;
 }
-.hero-tags-rotate .hero-tag.hero-tag-active {
-  opacity: 1;
-  transform: translateY(-50%);
-}
+.type-target.type-done::after { display: none; }
+@keyframes caret-blink { 50% { opacity: 0; } }
   
 /* SECTIONS */
 section {
@@ -764,10 +764,10 @@ footer {
       <div class="hero-img-wrap">
         <img src="https://irenelealdelaconcha.github.io/headshot.jpg" alt="Irene Leal" onerror="this.style.display='none'">
       </div>
-      <div class="hero-tags hero-tags-rotate">
-        <div class="hero-tag hero-tag-active"><span class="hero-tag-dot" style="background:#b8a0f8;"></span><span style="color:var(--accent2)">Conversational AI & NLP</span></div>
-        <div class="hero-tag"><span class="hero-tag-dot" style="background:#7eb8f7;"></span><span style="color:var(--accent)">e-Learning & Instructional Design</span></div>
-        <div class="hero-tag"><span class="hero-tag-dot" style="background:#e8c87a;"></span><span style="color:var(--gold)">Digital Humanities</span></div>
+      <div class="hero-tags">
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#b8a0f8;"></span><span style="color:var(--accent2)" class="type-target" data-text="Conversational AI & NLP"></span></div>
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#7eb8f7;"></span><span style="color:var(--accent)" class="type-target" data-text="e-Learning & Instructional Design"></span></div>
+        <div class="hero-tag"><span class="hero-tag-dot" style="background:#e8c87a;"></span><span style="color:var(--gold)" class="type-target" data-text="Digital Humanities"></span></div>
       </div>
     </div>
   </div>
@@ -1258,15 +1258,26 @@ window.addEventListener('scroll', () => {
   });
 });
 
-  // Hero tag rotator
-const heroTags = document.querySelectorAll('.hero-tags-rotate .hero-tag');
-if (heroTags.length) {
-  let tagIndex = 0;
-  setInterval(() => {
-    heroTags[tagIndex].classList.remove('hero-tag-active');
-    tagIndex = (tagIndex + 1) % heroTags.length;
-    heroTags[tagIndex].classList.add('hero-tag-active');
-  }, 2800);
+  // Hero tag typewriter
+function typeSequence(elements, i = 0) {
+  if (i >= elements.length) return;
+  const el = elements[i];
+  const fullText = el.getAttribute('data-text');
+  let charIndex = 0;
+  const speed = 35;
+  const typer = setInterval(() => {
+    el.textContent = fullText.slice(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === fullText.length) {
+      clearInterval(typer);
+      el.classList.add('type-done');
+      setTimeout(() => typeSequence(elements, i + 1), 200);
+    }
+  }, speed);
+}
+const typeTargets = document.querySelectorAll('.type-target');
+if (typeTargets.length) {
+  setTimeout(() => typeSequence(Array.from(typeTargets)), 500);
 }
   
 </script>

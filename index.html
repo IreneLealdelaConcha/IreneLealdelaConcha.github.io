@@ -28,6 +28,7 @@
 }
  
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; }
 html { scroll-behavior: smooth; }
  
 body {
@@ -400,8 +401,9 @@ section {
   padding: 4px;
   flex-shrink: 0;
 }
-.exp-company a { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; transition: opacity 0.2s; }
+.exp-company a { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; transition: opacity 0.2s; max-width: 100%; }
 .exp-company a:hover { opacity: 0.75; }
+.exp-company-name { flex: 1 1 auto; min-width: 0; }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .exp-bullets li {
   font-size: 0.92rem;
@@ -479,7 +481,7 @@ section {
   transition: gap 0.2s;
 }
 .project-card:hover .project-link { gap: 10px; }
- 
+.project-link--blue { color: #7eb8f7; } 
 /* AWARDS */
 .awards-grid {
   display: grid;
@@ -544,6 +546,8 @@ section {
   color: var(--accent);
   margin-bottom: 16px;
 }
+.skill-group-title--blue { color: #7eb8f7; }
+.skill-group-title--gold { color: var(--gold); }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 7px; }
 .skill-pill {
   font-size: 0.78rem;
@@ -731,6 +735,13 @@ footer {
   .divider { margin: 0 24px; }
   footer { flex-direction: column; gap: 12px; padding: 24px; text-align: center; }
 }
+
+@media (max-width: 480px) {
+  .nav-cv { padding: 6px 14px; font-size: 0.68rem; }
+  .nav-logo { font-size: 1.05rem; }
+  .about-stats { grid-template-columns: 1fr; }
+  section { padding: 48px 20px; }
+}
 </style>
 </head>
 <body>
@@ -759,7 +770,7 @@ footer {
     <div class="hero-eyebrow">Madrid</div>
     <h1 class="hero-name">Irene<em> Leal</em></h1>
     <p class="hero-title">Computational Linguist</p>
-    <p style="font-size:0.9rem;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-top:-14px;margin-bottom:28px;"><em>Language Technologies &nbsp;·&nbsp; Conversational AI &nbsp;·&nbsp; e-Learning</em></p>
+    <p style="font-size:0.9rem;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-top:-14px;margin-bottom:28px;"><em>Language Technologies &nbsp;·&nbsp; Conversational AI &nbsp;·&nbsp; e‑Learning</em></p>
     <p class="hero-desc">
       I started studying languages because I was fascinated by how they work from the inside.<br><br>
       The thread has always been the same: <em>language as a design tool.</em><br><br>
@@ -802,7 +813,7 @@ footer {
   <div class="about-grid">
     <div class="about-text reveal">
       <p><strong>I'm a Computational Linguist with a background in Modern Languages, Digital Humanities and e-Learning Engineering, </strong> three fields built around the same question: <em>how do people actually understand language?</em></p>
-      <p>That question took me from studying English and Italian linguistics to building chatbots. It also shaped 4 years at TransPerfect as an e-Learning Engineer, making sure training content worked both technically and linguistically across multiple languages, and where I learned <em><b>how dialogue flows, why some structures work better for comprehension than others, and how to adapt complex content so anyone can absorb it</b></em>, a perspective most computational linguists never get.</p>
+      <p>That question took me from studying English and Italian linguistics to building chatbots. It also shaped 4 years at TransPerfect as an e‑Learning Engineer, making sure training content worked both technically and linguistically across multiple languages, and where I learned <em><b>how dialogue flows, why some structures work better for comprehension than others, and how to adapt complex content so anyone can absorb it</b></em>, a perspective most computational linguists never get.</p>
       <p>Today that thread leads me to <strong>deudafix</strong>, where I design NLP solutions for legal documentation, adapt LLMs for insolvency-law terminology, and build conversational systems that make complex processes more accessible. Legal texts are unforgiving: the wrong term or a misread clause has real consequences, which is exactly the kind of precision I find worth solving for.</p>
     </div>
     <div class="reveal">
@@ -833,7 +844,7 @@ footer {
     <span class="focus-pill focus-purple">Prompt Engineering</span>
     <br>
     <span class="focus-pill focus-blue">Language Technologies</span>
-    <span class="focus-pill focus-blue">e-Learning</span>
+    <span class="focus-pill focus-blue">e‑Learning</span>
     <br>
     <span class="focus-pill focus-gold">Digital Humanities</span>
   </div>
@@ -860,7 +871,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Jun 2026 – Present · Madrid</div>
       <div class="exp-role">Computational Linguist</div>
-      <div class="exp-company"><a href="https://www.deudafix.es" target="_blank" rel="noopener"><img class="exp-logo" src="logoDeudaFix.jpg" alt="Deudafix" onerror="this.style.background='var(--surface2)';this.style.opacity='0.4';">deudafix</a></div>      
+      <div class="exp-company"><a href="https://www.deudafix.es" target="_blank" rel="noopener"><img class="exp-logo" src="logoDeudaFix.jpg" alt="Deudafix" onerror="this.style.background='var(--surface2)';this.style.opacity='0.4';"><span class="exp-company-name">Deudafix</span></a></div>      
       <ul class="exp-bullets">
         <li>Designing and evaluating NLP solutions for legal documentation, including information extraction, document classification and semantic analysis.</li>
         <li>Adapting and testing LLMs for legal-domain terminology, with a focus on Spanish insolvency law (Ley Concursal / TRLC, Ley de la Segunda Oportunidad).</li>
@@ -874,8 +885,8 @@ footer {
  
     <div class="exp-item reveal">
       <div class="exp-date">Jun 2023 – Jun 2026 · Madrid</div>
-      <div class="exp-role">E-Learning Engineer</div>
-      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</a></div>
+      <div class="exp-role">E‑Learning Engineer</div>
+      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect"><span class="exp-company-name">TransPerfect</span></a></div>
       <ul class="exp-bullets">
         <li>End-to-end implementation of localised e-Learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
         <li>Layout adjustment, audio synchronisation and image recreation after localisation, maintaining design intent across multiple language pairs.</li>
@@ -889,8 +900,8 @@ footer {
  
     <div class="exp-item reveal">
       <div class="exp-date">Dec 2021 – Jun 2023 · Madrid</div>
-      <div class="exp-role">Junior e-Learning Engineer</div>
-      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</a></div>
+      <div class="exp-role">Junior e‑Learning Engineer</div>
+      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect"><span class="exp-company-name">TransPerfect</span></a></div>
       <ul class="exp-bullets">
         <li>Developed full-cycle production expertise across authoring tools and localisation workflows for international clients.</li>
         <li>Built proficiency in SCORM packaging, LMS deployment and multimedia content adaptation.</li>
@@ -903,7 +914,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Feb – May 2021 · Remote · Internship</div>
       <div class="exp-role">Digital Edition & Instructional Design</div>
-      <div class="exp-company"><a href="https://www.ideaspropiaseditorial.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial">Ideaspropias Editorial</a></div>
+      <div class="exp-company"><a href="https://www.ideaspropiaseditorial.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial"><span class="exp-company-name">Ideaspropias Editorial</span></a></div>
       <ul class="exp-bullets">
         <li>Instructional design and content assembly for official certification e-Learning courses.</li>
         <li>Digital editing, PDF production and e-book layout and quality verification.</li>
@@ -916,7 +927,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Jan – Mar 2019 · Madrid · Internship</div>
       <div class="exp-role">Multilingual Trade & Administrative Assistant</div>
-      <div class="exp-company"><a href="https://italcamara-es.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoCAMERA.png" alt="Camera di Commercio">Camera di Commercio e Industria Italiana per la Spagna</a></div>
+      <div class="exp-company"><a href="https://italcamara-es.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoCAMERA.png" alt="Camera di Commercio"><span class="exp-company-name">Camera di Commercio e Industria Italiana per la Spagna</span></a></div>
       <ul class="exp-bullets">
         <li>Client-facing support in Italian and English for business partners and institutional contacts of the Italian Embassy's trade office.</li>
         <li>Market research, commercial event organisation and promotion of trade relations between Spain and Italy.</li>
@@ -977,10 +988,9 @@ footer {
         <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 50%, rgba(232,200,122,0.35), transparent 70%);font-size:3rem;">🎓</div>
       </div>
       <div class="project-body">
-        <div class="project-tag" style="color:var(--gold)">e-Learning · Interactive Design</div>
-        <div class="project-title">Interactive e-Learning Module</div>
+        <div class="project-tag" style="color:#7eb8f7">e‑Learning · Interactive Design</div>        <div class="project-title">Interactive e-Learning Module</div>
         <div class="project-desc">An interactive learning experience built with Genially, demonstrating instructional design principles applied to multimedia-rich digital content, balancing engagement with effective knowledge transfer.</div>
-        <div class="project-link">Explore project <span>→</span></div>
+        <div class="project-link project-link--blue">Explore project <span>→</span></div>
       </div>
     </a>
 
@@ -1084,7 +1094,7 @@ footer {
     <!-- e-Learning -->
     <div class="skill-group reveal">
       <div class="skill-group-icon">📚</div>
-      <div class="skill-group-title">e-Learning</div>
+      <div class="skill-group-title skill-group-title--blue">e‑Learning</div>
       <div class="skill-pills">
         <span class="skill-pill">Articulate Storyline</span>
         <span class="skill-pill">Rise 360</span>
@@ -1101,7 +1111,7 @@ footer {
     <!-- Digital Humanities -->
     <div class="skill-group reveal">
       <div class="skill-group-icon">🎨</div>
-      <div class="skill-group-title">Digital Humanities</div>
+      <div class="skill-group-title skill-group-title--gold">Digital Humanities</div>
       <div class="skill-pills">
         <span class="skill-pill">XML · TEI · XPath</span>
         <span class="skill-pill">Omeka · DSpace</span>

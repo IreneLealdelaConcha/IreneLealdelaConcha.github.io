@@ -398,6 +398,8 @@ section {
   padding: 4px;
   flex-shrink: 0;
 }
+.exp-company a { display: inline-flex; transition: opacity 0.2s; }
+.exp-company a:hover { opacity: 0.75; }
 .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .exp-bullets li {
   font-size: 0.92rem;
@@ -551,7 +553,15 @@ section {
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .skill-pill:hover { background: rgba(143,132,163,0.1); color: var(--accent); border-color: rgba(143,132,163,0.3); }
- 
+.skill-tier-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 4px 0 8px;
+}
+.skill-tier-label--secondary { margin-top: 14px; }
+.skill-pill--secondary { opacity: 0.6; font-size: 0.92em; } 
 /* EDUCATION */
 .edu-grid {
   display: grid;
@@ -848,8 +858,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Jun 2026 – Present · Madrid</div>
       <div class="exp-role">Computational Linguist</div>
-      <div class="exp-company"><img class="exp-logo" src="logoDeudaFix.jpg" alt="Deudafix" onerror="this.style.background='var(--surface2)';this.style.opacity='0.4';">Deudafix</div>
-      <ul class="exp-bullets">
+      <div class="exp-company"><a href="https://www.deudafix.es" target="_blank" rel="noopener"><img class="exp-logo" src="logoDeudaFix.jpg" alt="Deudafix" onerror="this.style.background='var(--surface2)';this.style.opacity='0.4';"></a>Deudafix</div>      <ul class="exp-bullets">
         <li>Designing and evaluating NLP solutions for legal documentation, including information extraction, document classification and semantic analysis.</li>
         <li>Adapting and testing LLMs for legal-domain terminology, with a focus on Spanish insolvency law (Ley Concursal / TRLC, Ley de la Segunda Oportunidad).</li>
         <li>Working with cloud AI infrastructure to support model deployment and evaluation.</li>
@@ -863,7 +872,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Jun 2023 – Jun 2026 · Madrid</div>
       <div class="exp-role">E-Learning Engineer</div>
-      <div class="exp-company"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</div>
+      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect"></a>TransPerfect</div>
       <ul class="exp-bullets">
         <li>End-to-end implementation of localised e-Learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
         <li>Layout adjustment, audio synchronisation and image recreation after localisation, maintaining design intent across multiple language pairs.</li>
@@ -878,7 +887,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Dec 2021 – Jun 2023 · Madrid</div>
       <div class="exp-role">Junior e-Learning Engineer</div>
-      <div class="exp-company"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect">TransPerfect</div>
+      <div class="exp-company"><a href="https://www.transperfect.com" target="_blank" rel="noopener"><img class="exp-logo" src="logoTRANSPERFECT.jpeg" alt="TransPerfect"></a>TransPerfect</div>
       <ul class="exp-bullets">
         <li>Developed full-cycle production expertise across authoring tools and localisation workflows for international clients.</li>
         <li>Built proficiency in SCORM packaging, LMS deployment and multimedia content adaptation.</li>
@@ -891,7 +900,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Feb – May 2021 · Remote · Internship</div>
       <div class="exp-role">Digital Edition & Instructional Design</div>
-      <div class="exp-company"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial">Ideaspropias Editorial</div>
+      <div class="exp-company"><a href="https://www.ideaspropiaseditorial.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoIPE.jpeg" alt="Ideaspropias Editorial"></a>Ideaspropias Editorial</div>
       <ul class="exp-bullets">
         <li>Instructional design and content assembly for official certification e-Learning courses.</li>
         <li>Digital editing, PDF production and e-book layout and quality verification.</li>
@@ -904,7 +913,7 @@ footer {
     <div class="exp-item reveal">
       <div class="exp-date">Jan – Mar 2019 · Madrid · Internship</div>
       <div class="exp-role">Multilingual Trade & Administrative Assistant</div>
-      <div class="exp-company"><img class="exp-logo" src="logoCAMERA.png" alt="Camera di Commercio">Camera di Commercio e Industria Italiana per la Spagna</div>
+      <div class="exp-company"><a href="https://italcamara-es.com/" target="_blank" rel="noopener"><img class="exp-logo" src="logoCAMERA.png" alt="Camera di Commercio"></a>Camera di Commercio e Industria Italiana per la Spagna</div>
       <ul class="exp-bullets">
         <li>Client-facing support in Italian and English for business partners and institutional contacts of the Italian Embassy's trade office.</li>
         <li>Market research, commercial event organisation and promotion of trade relations between Spain and Italy.</li>
@@ -1032,6 +1041,7 @@ footer {
     <div class="skill-group reveal">
       <div class="skill-group-icon">🤖</div>
       <div class="skill-group-title">Computational Linguistics & AI</div>
+      <div class="skill-tier-label">Core</div>
       <div class="skill-pills">
         <span class="skill-pill">Natural Language Processing (NLP)</span>
         <span class="skill-pill">Large Language Models (LLMs)</span>
@@ -1039,9 +1049,12 @@ footer {
         <span class="skill-pill">Conversational AI</span>
         <span class="skill-pill">Dialogue Design</span>
         <span class="skill-pill">Vertex AI</span>
-        <span class="skill-pill">IBM Watson Assistant</span>
-        <span class="skill-pill">Dialogflow</span>
-        <span class="skill-pill">Microsoft Copilot Studio</span>
+      </div>
+      <div class="skill-tier-label skill-tier-label--secondary">Familiar with</div>
+      <div class="skill-pills skill-pills--secondary">
+        <span class="skill-pill skill-pill--secondary">IBM Watson Assistant</span>
+        <span class="skill-pill skill-pill--secondary">Dialogflow</span>
+        <span class="skill-pill skill-pill--secondary">Microsoft Copilot Studio</span>
       </div>
     </div>
 
@@ -1049,15 +1062,19 @@ footer {
     <div class="skill-group reveal">
       <div class="skill-group-icon">💻</div>
       <div class="skill-group-title">Programming & Development</div>
+      <div class="skill-tier-label">Core</div>
       <div class="skill-pills">
         <span class="skill-pill">Python</span>
         <span class="skill-pill">NLTK</span>
-        <span class="skill-pill">HTML5 / CSS</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">Bootstrap</span>
-        <span class="skill-pill">SCORM / xAPI</span>
-        <span class="skill-pill">Azure OpenAI</span>
         <span class="skill-pill">Amazon Bedrock</span>
+        <span class="skill-pill">Azure OpenAI</span>
+      </div>
+      <div class="skill-tier-label skill-tier-label--secondary">Familiar with</div>
+      <div class="skill-pills skill-pills--secondary">
+        <span class="skill-pill skill-pill--secondary">HTML5 / CSS</span>
+        <span class="skill-pill skill-pill--secondary">JavaScript</span>
+        <span class="skill-pill skill-pill--secondary">Bootstrap</span>
+        <span class="skill-pill skill-pill--secondary">SCORM / xAPI</span>
       </div>
     </div>
 
@@ -1155,15 +1172,15 @@ footer {
       <p class="contact-sub">Curious about interesting challenges at the intersection of language, technology and education.</p>
       <div class="contact-links">
         <a href="mailto:irenelealdlc@gmail.com" class="contact-link">
-          <span class="contact-link-icon">✉</span>
+          <span class="contact-link-icon" aria-hidden="true">✉</span>
           irenelealdlc@gmail.com
         </a>
         <a href="https://www.linkedin.com/in/irene-leal-de-la-concha-/" target="_blank" class="contact-link">
-          <span class="contact-link-icon" style="font-size:0.75rem;font-weight:700;">in</span>
+          <span class="contact-link-icon" aria-hidden="true" style="font-size:0.75rem;font-weight:700;">in</span>
           linkedin.com/in/irene-leal-de-la-concha-
         </a>
         <a href="https://irenelealdelaconcha.github.io/IreneLeal_CV.pdf" target="_blank" class="contact-link">
-          <span class="contact-link-icon">🗎</span>
+          <span class="contact-link-icon" aria-hidden="true">🗎</span>
           Download CV (PDF)
         </a>
       </div>

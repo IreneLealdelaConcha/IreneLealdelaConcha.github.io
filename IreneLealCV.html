@@ -245,25 +245,25 @@ body {
 
 /* ============ LANGUAGES ============ */
 .lang-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 65px 110px;
   justify-content: center;
+  column-gap: 20px;
   align-items: baseline;
-  gap: 20px;
   font-size: 0.85rem;
   margin-bottom: 5px;
 }
 
 .lang-name {
   font-weight: 600;
-  width: 65px;
   text-align: right;
 }
 
 .lang-level {
   color: var(--muted);
-  width: 110px;
   text-align: left;
 }
+  
 .cert-list { margin-top: 10px; }
 .cert-item { font-size: 0.76rem; color: var(--muted); line-height: 1.6; padding-left: 12px; position: relative; }
 .cert-item::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
@@ -499,7 +499,7 @@ body {
       </div>
       
       <div class="exp-item">
-          <span class="exp-trade-role">Digital Edition &amp; Instructional Design 
+        <div class="exp-trade-role">Digital Edition &amp; Instructional Design</div> 
         <div class="exp-trade-sub"> 
           <span class="badge">— <i>Internship</i></span>
           <span class="exp-date">Feb – May 2021</span>

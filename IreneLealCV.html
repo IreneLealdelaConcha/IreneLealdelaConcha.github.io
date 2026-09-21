@@ -127,11 +127,47 @@ body {
 
 /* ============ EXPERIENCE ============ */
 .exp-item { margin-bottom: 20px; }
-.exp-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 4px 14px; }
-.exp-role { flex: 1; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.28rem; color: var(--ink); }
-.exp-role .badge { display: block; margin-top: -5px; margin-bottom: 8px; font-weight: 400; font-size: 0.72rem; color: var(--muted); font-family: 'Syne', sans-serif; }
-.exp-date { margin-left: 20px; font-size: 0.72rem; letter-spacing: 0.05em; color: var(--accent); text-transform: uppercase; white-space: nowrap; }
-.exp-company { font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
+.exp-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 14px;
+}
+
+.exp-role {
+  flex: 1;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  color: var(--ink);
+  min-width: 0;
+}
+
+.exp-role .badge {
+  display: block;
+  margin-top: -5px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: 'Syne', sans-serif;
+}
+
+.exp-date {
+  margin-left: 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.exp-company {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
 .exp-bullets { list-style: none; }
 .exp-bullets li {
   font-size: 0.85rem; color: #3a3a44; padding-left: 14px; position: relative;

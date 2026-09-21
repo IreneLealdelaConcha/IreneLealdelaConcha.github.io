@@ -246,12 +246,13 @@ body {
 @media print {
   @page {
     size: A4;
-    margin: 14mm 15mm;
+    margin: 10mm 12mm;
   }
 
   body {
     background: #fff;
-    font-size: 12px;
+    font-size: 11px;
+    line-height: 1.4;
   }
 
   .topbar {
@@ -269,50 +270,134 @@ body {
     padding: 0;
   }
 
-  /* Evita cortar bloques importantes entre páginas */
-  .exp-item,
-  .highlight-box,
-  .edu-item,
-  .award-item,
-  .skill-group,
+  /* Mantener las dos columnas también en PDF */
+  .grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 28px;
+  }
+
+  /* Compactar espacios */
+  .summary {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .sec-head {
+    margin-top: 18px;
+    margin-bottom: 9px;
+  }
+
+  .sec-head:first-child {
+    margin-top: 0;
+  }
+
+  .sec-title {
+    padding-bottom: 6px;
+  }
+
+  .exp-item {
+    margin-bottom: 13px;
+  }
+
+  .exp-role {
+    font-size: 1.18rem;
+  }
+
+  .exp-company {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+    line-height: 1.45;
+  }
+
+  .highlight-box {
+    padding: 10px 13px;
+  }
+
+  .edu-item {
+    margin-bottom: 12px;
+  }
+
+  .edu-degree {
+    font-size: 1.08rem;
+  }
+
+  .edu-sub {
+    font-size: 0.92rem;
+  }
+
+  .edu-school,
+  .edu-thesis {
+    font-size: 0.78rem;
+  }
+
+  .skill-group {
+    margin-bottom: 14px;
+  }
+
+  .pill {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+  }
+
+  .pills {
+    gap: 4px;
+  }
+
+  .lang-row {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+
   .cert-list {
+    margin-top: 7px;
+  }
+
+  .cert-item {
+    font-size: 0.7rem;
+    line-height: 1.45;
+  }
+
+  .award-item {
+    margin-bottom: 9px;
+  }
+
+  .award-title {
+    font-size: 0.82rem;
+  }
+
+  .award-meta {
+    font-size: 0.66rem;
+  }
+
+  /* Evitar cortes feos */
+  .exp-item,
+  .edu-item,
+  .skill-group,
+  .award-item,
+  .highlight-box {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* Intenta mantener el título de sección con el contenido siguiente */
   .sec-head {
     break-after: avoid;
     page-break-after: avoid;
   }
 
-  /* Evita que el encabezado quede solo al final de una página */
   .sec-head + .exp-item,
-  .sec-head + .highlight-box,
   .sec-head + .edu-item,
   .sec-head + .skill-group,
   .sec-head + .lang-row,
   .sec-head + .award-item {
     break-before: avoid;
     page-break-before: avoid;
-  }
-
-  /* Mantiene cada experiencia laboral como un bloque */
-  .exp-item {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Mantiene los proyectos juntos */
-  .highlight-box {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Mantiene cada formación junta */
-  .edu-item {
-    break-inside: avoid;
-    page-break-inside: avoid;
   }
 
   .highlight-box,

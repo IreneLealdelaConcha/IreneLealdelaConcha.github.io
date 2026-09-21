@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irene Leal · CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1c1c22;
+  --muted: #6b6b7d;
+  --line: #e2e2e8;
+  --accent: #7c5c9e;      /* violeta grafito */
+  --accent-soft: #f2eef7;
+  --blue: #3f7cc4;        /* e-Learning */
+  --gold: #a9822f;        /* Digital Humanities / Awards */
+  --paper: #ffffff;
+  --paper-bg: #f4f4f7;    /* fondo de la página en pantalla, no en impresión */
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Syne', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper-bg);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ============ TOP BAR (no se imprime) ============ */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; justify-content: center; align-items: center; gap: 16px;
+  padding: 14px 20px;
+  background: var(--ink);
+  color: #fff;
+}
+.topbar-label { font-size: 0.8rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.7); }
+.download-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 9px 22px;
+  border-radius: 40px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.download-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ============ PAGE / SHEET ============ */
+.sheet-wrap { display: flex; justify-content: center; padding: 32px 16px 60px; }
+.sheet {
+  background: var(--paper);
+  width: 100%;
+  max-width: 850px;
+  padding: 44px 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  border-radius: 4px;
+}
+
+/* ============ HEADER ============ */
+.header {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 14px; margin-bottom: 22px;
+}
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 2.6rem;
+  color: var(--ink);
+}
+.name em { font-style: italic; color: var(--accent); }
+.role {
+  font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-top: 4px;
+}
+.contact {
+  text-align: right;
+  font-size: 0.82rem; color: var(--muted); line-height: 1.7;
+}
+.contact a { color: var(--muted); text-decoration: none; }
+.contact a:hover { color: var(--accent); }
+@media (max-width: 560px) {
+  .header { flex-direction: column; align-items: flex-start; }
+  .contact { text-align: left; }
+}
+
+/* ============ SUMMARY ============ */
+.summary {
+  font-size: 0.95rem; line-height: 1.7; color: #33333d;
+  margin-bottom: 30px;
+}
+.summary em { font-style: italic; color: var(--accent); font-family: 'Cormorant Garamond', serif; font-size: 1.08em; }
+
+/* ============ RESPONSIVE GRID ============ */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+@media (min-width: 760px) {
+  .grid { grid-template-columns: 1.55fr 1fr; }
+}
+
+/* ============ SECTION HEADERS ============ */
+.sec-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 14px; margin-top: 26px;
+}
+.sec-head:first-child { margin-top: 0; }
+.sec-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; color: #cfcfd8; font-weight: 300;
+}
+.sec-title {
+  font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 600; color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  flex: 1; padding-bottom: 10px;
+}
+
+/* ============ EXPERIENCE ============ */
+.exp-item { margin-bottom: 20px; }
+.exp-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 14px; }
+.exp-role { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.28rem; color: var(--ink); }
+.exp-role .badge { font-weight: 400; font-size: 0.72rem; color: var(--muted); font-family: 'Syne', sans-serif; }
+.exp-date { font-size: 0.72rem; letter-spacing: 0.05em; color: var(--accent); text-transform: uppercase; white-space: nowrap; }
+.exp-company { font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
+.exp-bullets { list-style: none; }
+.exp-bullets li {
+  font-size: 0.85rem; color: #3a3a44; padding-left: 14px; position: relative;
+  margin-bottom: 5px; line-height: 1.6;
+}
+.exp-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--muted); }
+
+/* ============ HIGHLIGHT BOX ============ */
+.highlight-box {
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  padding: 16px 18px;
+  margin-top: 6px; margin-bottom: 8px;
+  font-size: 0.85rem; line-height: 1.65; color: #3a3247;
+  border-radius: 0 6px 6px 0;
+}
+.highlight-box b { font-weight: 700; color: var(--ink); }
+.highlight-box a { color: var(--accent); }
+
+/* ============ EDUCATION ============ */
+.edu-item { margin-bottom: 18px; }
+.edu-degree { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+.edu-sub { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--muted); }
+.edu-school { font-size: 0.82rem; color: var(--muted); margin: 3px 0 6px; }
+.edu-thesis { font-size: 0.82rem; color: #3a3a44; line-height: 1.6; }
+
+/* ============ AWARDS ============ */
+.award-item { margin-bottom: 14px; }
+.award-title { font-size: 0.87rem; font-weight: 600; color: var(--ink); line-height: 1.45; }
+.award-meta { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+
+/* ============ SKILLS ============ */
+.skill-group { margin-bottom: 20px; }
+.skill-group-title { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+.skill-group-title.purple { color: var(--accent); }
+.skill-group-title.blue { color: var(--blue); }
+.skill-group-title.gold { color: var(--gold); }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { font-size: 0.74rem; padding: 4px 11px; border-radius: 20px; border: 1px solid var(--line); color: #3a3a44; background: #fafafc; }
+
+/* ============ LANGUAGES ============ */
+.lang-row { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px; }
+.lang-name { font-weight: 600; }
+.lang-level { color: var(--muted); }
+.cert-list { margin-top: 10px; }
+.cert-item { font-size: 0.76rem; color: var(--muted); line-height: 1.6; padding-left: 12px; position: relative; }
+.cert-item::before { content: '·'; position: absolute; left: 0; color: var(--accent); }
+
+/* ============ PRINT ============ */
+@media print {
+  @page { size: A4; margin: 14mm 15mm; }
+  body { background: #fff; font-size: 12px; }
+  .topbar { display: none; }
+  .sheet-wrap { padding: 0; }
+  .sheet { box-shadow: none; border-radius: 0; max-width: 100%; padding: 0; }
+  .highlight-box, .pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit !important; text-decoration: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= TOP BAR — no se imprime ================= -->
+<div class="topbar">
+  <span class="topbar-label">Irene Leal · CV</span>
+  <button class="download-btn" onclick="window.print()">↓ Download as PDF</button>
+</div>
+
+<div class="sheet-wrap">
+<div class="sheet">
+
+  <!-- ================= HEADER =================
+       EDITA AQUÍ: nombre, rol, email, teléfono, ubicación, enlaces -->
+  <div class="header">
+    <div>
+      <div class="name">Irene<em> Leal</em> de la Concha</div>
+      <div class="role">Computational Linguist</div>
+    </div>
+    <div class="contact">
+      <a href="mailto:irenelealdlc@gmail.com">irenelealdlc@gmail.com</a> · (+34) 680 929 002<br>
+      Madrid, Spain<br>
+      <a href="https://www.linkedin.com/in/irene-leal-de-la-concha-/" target="_blank">linkedin.com/in/irene-leal-de-la-concha-</a>
+    </div>
+  </div>
+
+  <!-- ================= SUMMARY — EDITA AQUÍ ================= -->
+  <p class="summary">
+    Computational Linguist with a background in Modern Languages, Digital Humanities and e‑Learning Engineering. <em>I design NLP solutions for legal documentation, adapt LLMs for domain-specific terminology, and build conversational systems that make complex information accessible.</em> Four years of prior experience in instructional design and localisation gave me a practical understanding of how dialogue and content structure affect comprehension — a perspective that now shapes how I approach conversational AI and applied language technology.
+  </p>
+
+  <div class="grid">
+
+    <!-- ================= MAIN COLUMN ================= -->
+    <div class="col-main">
+
+      <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">Work Experience</span></div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Computational Linguist</span>
+          <span class="exp-date">Jun 2026 – Present</span>
+        </div>
+        <div class="exp-company">Deudafix · Madrid · LegalTech, debt relief &amp; insolvency law</div>
+        <ul class="exp-bullets">
+          <li>Design and evaluate NLP solutions for legal documentation, including information extraction, document classification and semantic analysis.</li>
+          <li>Adapt and test LLMs for legal-domain terminology, focused on Spanish insolvency law (Ley Concursal / TRLC, Ley de la Segunda Oportunidad).</li>
+          <li>Work with cloud AI infrastructure (Vertex AI, Amazon Bedrock) to support model deployment and evaluation.</li>
+          <li>Analyse legal corpora and documentary workflows to identify opportunities for automation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">E‑Learning Engineer</span>
+          <span class="exp-date">Jun 2023 – Jun 2026</span>
+        </div>
+        <div class="exp-company">TransPerfect · Madrid</div>
+        <ul class="exp-bullets">
+          <li>End-to-end implementation of localised e‑Learning courses in Articulate Storyline, Rise, Adapt Learning, Learning360 and Teach on Mars, ensuring linguistic accuracy and functional integrity across languages.</li>
+          <li>Layout adjustment, audio synchronisation and image recreation after localisation, preserving design intent across language pairs.</li>
+          <li>Bug resolution during linguistic and functional QA in a high-volume, deadline-driven production environment.</li>
+          <li>Cross-office coordination with Project Managers and production teams across multiple time zones.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Junior E‑Learning Engineer</span>
+          <span class="exp-date">Dec 2021 – Jun 2023</span>
+        </div>
+        <div class="exp-company">TransPerfect · Madrid</div>
+        <ul class="exp-bullets">
+          <li>Developed full-cycle production expertise across authoring tools and localisation workflows for international clients.</li>
+          <li>Built proficiency in SCORM packaging, LMS deployment and multimedia content adaptation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Digital Edition &amp; Instructional Design <span class="badge">— Internship</span></span>
+          <span class="exp-date">Feb – May 2021</span>
+        </div>
+        <div class="exp-company">Ideaspropias Editorial · Remote</div>
+        <ul class="exp-bullets">
+          <li>Instructional design and content assembly for official certification e‑Learning courses.</li>
+          <li>Digital editing, PDF production and e-book layout and quality verification.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <span class="exp-role">Multilingual Trade &amp; Administrative Assistant <span class="badge">— Internship</span></span>
+          <span class="exp-date">Jan – Mar 2019</span>
+        </div>
+        <div class="exp-company">Camera di Commercio e Industria Italiana per la Spagna · Madrid</div>
+        <ul class="exp-bullets">
+          <li>Client-facing support in Italian and English for business partners and institutional contacts of the Italian Embassy's trade office.</li>
+          <li>Market research, commercial event organisation and promotion of Spain–Italy trade relations.</li>
+        </ul>
+      </div>
+
+      <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">Selected Project</span></div>
+      <div class="highlight-box">
+        <b>DantescoBot</b> — a literary conversational assistant specialised in Dante Alighieri and the Divine Comedy, built as my Master's thesis. Awarded <b>2nd Prize at UCM's Frankenbot literary-bot competition</b> (REC‑LIT research project, 2021). Demonstrates how dialogue architecture can make cultural heritage accessible and engaging.<br>
+        <a href="https://irenelealdelaconcha.github.io/DantescoBot/" target="_blank">irenelealdelaconcha.github.io/DantescoBot</a>
+      </div>
+
+      <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">Education</span></div>
+
+      <div class="edu-item">
+        <div class="edu-degree">Master's in Digital Humanities</div>
+        <div class="edu-sub">Letras Digitales: Estudios Avanzados en Textualidades Electrónicas</div>
+        <div class="edu-school">Universidad Complutense de Madrid · 2020–2022 · Avg. grade 7.88</div>
+        <div class="edu-thesis">Computational linguistics &amp; language technologies · Web technologies, AI &amp; e‑Learning · Metadata standards (XML, TEI, XPath, DTD) · Digital archiving &amp; project management</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-degree">Degree in Modern Languages</div>
+        <div class="edu-sub">English &amp; Italian Linguistics and Literatures</div>
+        <div class="edu-school">Universidad Complutense de Madrid · 2015–2019 · Avg. grade 8.50</div>
+        <div class="edu-thesis">Linguistics, semantics, pragmatics &amp; discourse analysis · Textual criticism &amp; cultural heritage</div>
+      </div>
+
+    </div>
+
+    <!-- ================= SIDE COLUMN ================= -->
+    <div class="col-side">
+
+      <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">Skills</span></div>
+
+      <div class="skill-group">
+        <div class="skill-group-title purple">Computational Linguistics &amp; AI</div>
+        <div class="pills">
+          <span class="pill">NLP</span><span class="pill">LLMs</span><span class="pill">Prompt Engineering</span>
+          <span class="pill">Conversational AI</span><span class="pill">Dialogue Design</span><span class="pill">Vertex AI</span>
+          <span class="pill">IBM Watson</span><span class="pill">Dialogflow</span><span class="pill">Copilot Studio</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title purple">Programming</div>
+        <div class="pills">
+          <span class="pill">Python</span><span class="pill">NLTK</span><span class="pill">Amazon Bedrock</span>
+          <span class="pill">Azure OpenAI</span><span class="pill">HTML5/CSS</span><span class="pill">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title blue">E‑Learning</div>
+        <div class="pills">
+          <span class="pill">Articulate Storyline</span><span class="pill">Rise 360</span><span class="pill">Adapt Learning</span>
+          <span class="pill">Genially</span><span class="pill">Instructional Design</span><span class="pill">LMS</span><span class="pill">Localisation</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title gold">Digital Humanities</div>
+        <div class="pills">
+          <span class="pill">XML · TEI · XPath</span><span class="pill">Omeka · DSpace</span>
+          <span class="pill">Adobe CC</span><span class="pill">ePub (Sigil)</span><span class="pill">UX Design</span>
+        </div>
+      </div>
+
+      <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">Languages</span></div>
+      <div class="lang-row"><span class="lang-name">Spanish</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">C1 · Advanced</span></div>
+      <div class="lang-row"><span class="lang-name">Italian</span><span class="lang-level">C2 · Advanced</span></div>
+      <div class="cert-list">
+        <div class="cert-item">Business Communication, British Council (2023)</div>
+        <div class="cert-item">Cambridge Advanced exam prep, UCM (2022)</div>
+        <div class="cert-item">First Certificate in English, Cambridge (2020)</div>
+        <div class="cert-item">CILS Certification, Scuola Statale Italiana di Madrid</div>
+      </div>
+
+      <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">Awards &amp; Scholarships</span></div>
+      <div class="award-item">
+        <div class="award-meta">UCM · REC‑LIT · 2021</div>
+        <div class="award-title">2nd Prize — Literary Bot Competition (Frankenbot)</div>
+      </div>
+      <div class="award-item">
+        <div class="award-meta">UCM · 2019</div>
+        <div class="award-title">Academic Excellence Scholarship</div>
+      </div>
+      <div class="award-item">
+        <div class="award-meta">UIMP &amp; UCM · 2023–2025</div>
+        <div class="award-title">Competitive course &amp; conference scholarships (AI Challenges · Language Tech · Design)</div>
+      </div>
+      <div class="award-item">
+        <div class="award-meta">Becas Santander · 2021</div>
+        <div class="award-title">Beca Santander Idiomas — Lingua Complutense</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html>

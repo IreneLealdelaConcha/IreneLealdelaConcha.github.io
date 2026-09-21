@@ -244,13 +244,87 @@ body {
 
 /* ============ PRINT ============ */
 @media print {
-  @page { size: A4; margin: 14mm 15mm; }
-  body { background: #fff; font-size: 12px; }
-  .topbar { display: none; }
-  .sheet-wrap { padding: 0; }
-  .sheet { box-shadow: none; border-radius: 0; max-width: 100%; padding: 0; }
-  .highlight-box, .pill { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  a { color: inherit !important; text-decoration: none !important; }
+  @page {
+    size: A4;
+    margin: 14mm 15mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 12px;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .sheet-wrap {
+    padding: 0;
+  }
+
+  .sheet {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Evita cortar bloques importantes entre páginas */
+  .exp-item,
+  .highlight-box,
+  .edu-item,
+  .award-item,
+  .skill-group,
+  .cert-list {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Intenta mantener el título de sección con el contenido siguiente */
+  .sec-head {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Evita que el encabezado quede solo al final de una página */
+  .sec-head + .exp-item,
+  .sec-head + .highlight-box,
+  .sec-head + .edu-item,
+  .sec-head + .skill-group,
+  .sec-head + .lang-row,
+  .sec-head + .award-item {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  /* Mantiene cada experiencia laboral como un bloque */
+  .exp-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Mantiene los proyectos juntos */
+  .highlight-box {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Mantiene cada formación junta */
+  .edu-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .highlight-box,
+  .pill {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
 }
 </style>
 </head>

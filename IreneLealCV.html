@@ -163,6 +163,31 @@ body {
   white-space: nowrap;
 }
 
+.exp-trade-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.28rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.exp-trade-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.exp-trade-sub .badge {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-family: 'Syne', sans-serif;
+}
+
+.exp-trade-sub .exp-date {
+  margin-left: 20px;
+}  
+
 .exp-company {
   font-size: 0.85rem;
   color: var(--muted);
@@ -322,10 +347,9 @@ body {
       </div>
 
       <div class="exp-item">
-        <div class="exp-top">
-          <span class="exp-role">Multilingual Trade &amp; Administrative Assistant 
-            <span class="badge">— <i>Internship</i></span>
-          </span>
+        <div class="exp-trade-role">Multilingual Trade &amp; Administrative Assistant</div>
+        <div class="exp-trade-sub"> 
+          <span class="badge">— <i>Internship</i></span>
           <span class="exp-date">Jan – Mar 2019</span>
         </div>
         <div class="exp-company">Camera di Commercio e Industria Italiana per la Spagna · Madrid</div>
